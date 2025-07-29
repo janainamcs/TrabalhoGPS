@@ -2,8 +2,7 @@
     grid-template-areas:
     "header header"
     "main  main"
-    "nav  nav"
-    "footer  footer";
+    "nav  nav";
     background-color: hsl(0, 0%, 100%);
     color: hsl(222.2, 84%, 4.9%);    
     box-sizing: border-box;
@@ -12,7 +11,7 @@
     border-color: hsl(214.3, 31.8%, 91.4%);
 }
 
-/* header */
+/* inicio do css da header -----------------------------------------------------*/
 .header{
     display: flex;
     justify-content: space-evenly;
@@ -138,16 +137,17 @@
     opacity: 1;
 }
 
-/* conteudo da tela */
-
+/* fim do css da header ------------------------------------------------------- */
+/* -------------------- inicio do css do conteudo da tela --------------------- */
 .content{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     min-height: fit-content;
+    width: 95%;
     margin: 1%;
-    gap: 1.5rem;
+    padding: 0.25rem;
     
 }
 
@@ -157,13 +157,15 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    padding: 1rem;
     width: 100%;
     border-width: 1.5px;
     border-color: hsl(214.3, 31.8%, 91.4%);
     border-style: solid;
     border-radius: 0.5rem;
     box-shadow: 2px 3px 10px rgb(220, 222, 224);
+    margin: 1% 0;
+    gap: 0.5rem;
+    z-index: 2;
 }
 
 .card-header{
@@ -209,18 +211,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 2rem;
-    left: 1rem;
-    background-image: linear-gradient(to right, #58cc02 , #46a302);
-    font-size: 1rem;
-    font-weight: 600;
+    background-image: linear-gradient(to right, #CE82FF, #1CB0F6);
+    font-size: large;
+    font-weight: 700;
     color: rgb(255, 255, 255);
     border-style: none;
-    padding: 0.25rem;
-    border-radius: 0.5rem;
-    width: 95%;
-    height: 3rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    width: 100%;
     cursor: pointer;
     transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
     color 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -229,23 +227,86 @@
 /* CSS pro hover */
 .main-buttons:hover{
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(to right, #46a302, #58cc02);
+    background-image: linear-gradient(to right, #1CB0F6, #CE82FF);
 }
 
-/* pergunta */
-.question{
-    display: grid;
-    justify-content: space-evenly;
+/* meta diária */
+
+.content-goals{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin:  1% 2%;
+    width: 96%;
+    height: 128px;
+}
+
+
+/* trilha de aprendizado */
+.roadmap{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    position: relative;
-    top: 0;
-    right: 0;
-    padding: 1rem 0.5;
-    height: 100%;
+    justify-content: center;
+    gap: 3rem;
 }
 
+.road{
+    background: linear-gradient(to bottom, #58CC02 ,#1CB0F6, rgb(107, 110, 114));
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    inset-inline-start: 50%;
+    z-index: 1;
+}
 
-/* navegacao */
+.lesson{
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0%, 100%);
+    color: #1CB0F6;
+    border: 2.5px solid currentColor;
+    padding: 1.5rem;
+}
+
+.lesson-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 1.5rem;
+    width: 100%;
+}
+
+.lesson-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 1.5rem;;
+    width: 100%;
+    font-size: 0.75;
+}
+
+.finished{
+    background-color: #58CC02;
+    border-radius: 0.5rem;
+    border-style: none;
+    color: rgb(255, 255, 255);
+}
+
+.blocked{
+    background-color: rgb(229, 231, 235);
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-color: rgb(220, 222, 224);
+    color: rgb(107, 110, 114);
+
+}
+
+/* ---------------------- fim do css do conteudo da tela ----------------------- */
+/* ------------------------ inicio do css da navegacao ------------------------- */
 .navigation{
     display: flex;
     justify-content: space-evenly;
@@ -299,4 +360,4 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-
+/* -------------------------- fim do css da navegacao --------------------------- */

@@ -2,8 +2,7 @@
     grid-template-areas:
     "header header"
     "main  main"
-    "nav  nav"
-    "footer  footer";
+    "nav  nav";
     background-color: hsl(0, 0%, 100%);
     color: hsl(222.2, 84%, 4.9%);    
     box-sizing: border-box;
@@ -11,8 +10,7 @@
     border-style: solid;
     border-color: hsl(214.3, 31.8%, 91.4%);
 }
-
-/* header */
+/* --------------------------- inicio do css da header ------------------------ */
 .header{
     display: flex;
     justify-content: space-between;
@@ -152,8 +150,8 @@
     transform: translate(2%, -2%);
 }
 
-/* conteudo da tela */
-
+/* -----------------------fim do css da header ------------------------------- */
+/* -------------------- inicio do css do conteudo da tela --------------------- */
 .content{
     display: flex;
     flex-direction: column;
@@ -347,7 +345,8 @@
 
 }
 
-/* navegacao */
+/* ---------------------- fim do css do conteudo da tela ----------------------- */
+/* ------------------------ inicio do css da navegacao ------------------------- */
 .navigation{
     display: flex;
     justify-content: space-evenly;
@@ -401,4 +400,4 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-
+/* -------------------------- fim do css da navegacao --------------------------- */
