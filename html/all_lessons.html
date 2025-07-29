@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevClass</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/index2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/licoes.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <header class="header">
+        <div class="points">
+            <div class="streak">
+                <span class="material-symbols-outlined header-icons">
+                    local_fire_department
+                </span>
+                <p class="header-contents">3</p>
+            </div>
+            <div class="coins">
+                <span class="material-symbols-outlined header-icons"> paid </span>
+                <p class="header-contents">3</p>
+            </div>
+        </div>
+        <div class="logo">
+            <p>DevClass</p>
+        </div>
+        <div class="functional">
+            <div class="notifications">
+                <button type="button" class="nav-buttons" onclick="mostrar('notifications.html')">
+                    <span class="material-symbols-outlined header-icons">
+                    notifications
+                    </span>
+                </button>
+            </div>
+            <div class="settings">
+                <button type="button" class="nav-buttons" onclick="mostrar('settings.html')">
+                    <span class="material-symbols-outlined header-icons">
+                    settings
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="trilha-aprendizado">
+            <div class="meta"></div>
+            <h2>Trilha de JavaScript</h2>
+            <ul id="lista-licoes">
+                <li>🔓 Lição 1 - Variáveis (25 XP)</li>
+                <li>🔒 Lição 2 - Condicionais (Bloqueada)</li>
+            </ul>
+        </div>
+            
+    </main>
+    <nav class="navigation">
+      <button
+        type="button"
+        class="nav-buttons active"
+        onclick="mostrar('index2.html')"
+        active
+      >
+        <span class="material-symbols-outlined nav-icons">home</span>
+        Aprender
+      </button>
+
+      <button
+        type="button"
+        class="nav-buttons"
+        onclick="mostrar('ranking.html')"
+      >
+        <span class="material-symbols-outlined nav-icons">leaderboard</span>
+        Ranking
+      </button>
+
+      <button
+        type="button"
+        class="nav-buttons"
+        onclick="mostrar('profile.html')"
+      >
+        <span class="material-symbols-outlined nav-icons">person</span>
+        Perfil
+      </button>
+    </nav>
+    <footer></footer>
+    <script>
+      function mostrar(id) {
+        location.href = id;
+      }
+    </script>
+  </body>
+</html>

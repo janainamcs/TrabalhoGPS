@@ -1,0 +1,390 @@
+body{
+    grid-template-areas:
+    "header header"
+    "main  main"
+    "nav  nav"
+    "footer  footer";
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(222.2, 84%, 4.9%);    
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: hsl(214.3, 31.8%, 91.4%);
+}
+
+/* header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    padding: 1rem;
+}
+
+.divider{
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(229, 231, 235);
+    border-bottom-style: solid;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.header-icons{
+    margin: 0.25rem;
+    position: relative;
+    z-index: 2;
+}
+
+.header-contents{
+    margin: 0.25rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.functional{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: hsl(214.3, 31.8%, 91.4%);
+}
+
+.header-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+    padding: 0.25rem;
+    border-radius: 9999px;
+}
+
+/* CSS pro hover */
+.header-buttons:hover{
+    color: rgb(55, 65, 81);
+    animation-duration: 100ms;
+    transition-duration: 150ms;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    background-size: cover;
+    background-position: center;
+}
+
+.header-buttons::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background-color: rgb(239, 246, 255);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-buttons:hover::before {
+    opacity: 1;
+}
+
+/* --- CSS para a bolinha de notificação --- */
+
+.notification-active .header-icons {
+    position: relative;
+}
+
+.notification-active .header-icons::after {
+    content: '';
+    position: absolute;
+    top: 0.075rem;
+    right: 0.075rem;
+    width: 8px;
+    height: 8px;
+    background-color: red; 
+    border-radius: 50%;
+    border: 1.5px solid white;
+    z-index: 3;
+    transform: translate(2%, -2%);
+}
+
+/* conteudo da tela */
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    padding: 1rem;
+    width: 95%;
+    border-width: 1.5px;
+    border-color: hsl(214.3, 31.8%, 91.4%);
+    border-style: solid;
+    border-radius: 0.5rem;
+    margin: 1% 1%;
+}
+
+.card-header{
+    margin: 0;
+    align-self: self-start;
+    font-weight: 600;
+    font-size: 1.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.main-icons{
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0.25rem;
+    color: ;
+}
+
+.main-labels{
+    margin: 0.25rem;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.main-contents{
+    margin: 0.25rem;
+    font-weight: 300;
+    font-size: 0.875rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(75, 75, 75);
+}
+
+
+.main-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #58cc02 , #46a302);
+    font-size: large;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    border-style: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    width: 80%;
+    cursor: pointer;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CSS pro hover */
+.main-buttons:hover{
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #46a302, #58cc02);
+}
+
+
+/* Card do usuario */
+.photo-container{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    border-color: #58CC02;
+    border-style: solid;
+    border-width: 4px;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.user-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transform: translate(25%, 25%);
+    background-color: #58cc02;
+    font-size: large;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    border-style: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.user-buttons:hover{
+    color: rgb(255, 255, 255);
+    background-color: #46a302; 
+    z-index: 2;
+}
+
+.text-container{
+    width: 80%;
+    margin: 0 auto 12px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-name{
+    margin: 0.25rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.user-infos{
+    margin: 0.25rem;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+/* Card das estatisticas */
+.stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.wins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    stroke:rgb(249, 115, 22);
+}
+
+.streak{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:rgb(249, 115, 22);
+}
+
+.coins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:rgb(234, 179, 8);
+}
+
+/* Card das conquistas */
+.achievements-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.achievements-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 99%;
+    align-items: center;
+}
+
+.achievements-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    color: rgb(156, 163, 175);
+    background-color: rgb(229, 231, 235);
+}
+
+.active{
+    color: rgb(255, 255, 255);
+    background-color: #58CC02;
+}
+
+.achievements-text-area{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+/* navegacao */
+.navigation{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    padding: 0.5rem;
+    border-top-width: 1px;
+    border-top-color: rgb(243, 244, 246);
+    border-top-style: solid;
+}
+
+.nav-icons{
+    display: flex;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0.25rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: rgb(107,114,128);
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+    cursor: pointer;
+}
+
+.nav-active{
+    background-color: rgb(239, 246, 255);
+    color: rgb(28, 176, 246);
+    text: rgb(28, 176, 246);
+}
+
+.nav-buttons:hover{
+    color: rgb(55, 65, 81);
+    animation-duration: 200ms;
+    transition-duration: 200ms;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
