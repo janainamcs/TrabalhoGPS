@@ -4,70 +4,95 @@
     <meta charset="UTF-8" />
     <title>DevClass</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../css/index2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/lessons.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
     />
   </head>
   <body>
-    <header class="header">
-      <div class="points">
-        <div class="streak">
-          <span class="material-symbols-outlined header-icons">
-            local_fire_department
-          </span>
-          <p class="header-contents">3</p>
+    <header>
+      <div class="header">
+        <div class="back">
+          <button type="button" class="header-buttons" onclick="check()">
+            <span class="material-symbols-outlined header-icons">
+              arrow_back
+            </span>
+          </button>
         </div>
-        <div class="coins">
-          <span class="material-symbols-outlined header-icons"> paid </span>
-          <p class="header-contents">3</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="points">
+          <div class="lifes">
+            <span class="material-symbols-outlined"> favorite </span>
+            <p class="header-contents">3</p>
+          </div>
+          <div class="coins">
+            <span class="material-symbols-outlined header-icons"> paid </span>
+            <p class="header-contents">3</p>
+          </div>
         </div>
       </div>
-      <div class="logo">
-        <p>DevClass</p>
-      </div>
-      <div class="functional">
-            <div class="notifications notification-active" id="notification-active">
-                <button type="button" class="header-buttons" onclick="mostrar('notifications.html')">
-                    <span class="material-symbols-outlined header-icons">
-                    notifications
-                    </span>
-                </button>
-            </div>
-            <div class="settings">
-                <button type="button" class="header-buttons" onclick="mostrar('settings.html')">
-                    <span class="material-symbols-outlined header-icons">
-                    settings
-                    </span>
-                </button>
-            </div>
-        </div>
+      <div class="divider"></div>
     </header>
-    <main>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dolorem consectetur veniam debitis aut minus quibusdam accusamus ex rem, vero asperiores delectus itaque vel explicabo quasi quas quisquam ea error?</p>
+
+    <main class="content">
+      <!-- trilha de aprendizado -->
+      <div class="question">
+        <h4 class="card-header">Qual a forma correta de declarar uma variável em Python?</h4>
+
+        <div class="options-list">
+          <div class="option-item">
+
+          </div>  
+        </div>
+        <button type="submit" class="main-buttons">
+          Verificar
+        </button>
+      </div>
     </main>
-    <nav class="navigation">
-      <button type="button" class="nav-buttons active" onclick="mostrar('index2.html')" active>
+    <!-- <nav class="navigation">
+      <button
+        type="button"
+        class="nav-buttons nav-active"
+        onclick="mostrar('index2.html')"
+        active
+      >
         <span class="material-symbols-outlined nav-icons">home</span>
         Aprender
       </button>
-      
-      <button type="button" class="nav-buttons" onclick="mostrar('profile.html')">
+
+      <button
+        type="button"
+        class="nav-buttons"
+        onclick="mostrar('ranking.html')"
+      >
         <span class="material-symbols-outlined nav-icons">leaderboard</span>
-        Ranking  
+        Ranking
       </button>
 
-      <button type="button" class="nav-buttons" onclick="mostrar('profile.html')">
+      <button
+        type="button"
+        class="nav-buttons"
+        onclick="mostrar('profile.html')"
+      >
         <span class="material-symbols-outlined nav-icons">person</span>
         Perfil
       </button>
-    </nav>
-    <footer></footer>
+    </nav> -->
     <script>
+      function check() {
+        if (confirm("Realmente deseja desistir?")) {
+          voltar();
+        }
+      }
+      function voltar() {
+        history.back();
+      }
       function mostrar(id) {
         location.href = id;
       }
-  </script>
+    </script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-body{
+.body{
     grid-template-areas:
     "header header"
     "main  main"
@@ -15,19 +15,11 @@ body{
 /* header */
 .header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     position: relative;
     top: 0;
     padding: 0.25rem;
-}
-
-.divider{
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(229, 231, 235);
-    border-bottom-style: solid;
-    margin: 0.5rem 0;
-    width: 100%;
 }
 
 .header-icons{
@@ -47,18 +39,63 @@ body{
     font-weight: 600;
     font-size: 1.25rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 }
 
-.functional{
+.divider{
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(229, 231, 235);
+    border-bottom-style: solid;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+/* barra de progresso da header */
+.progress-bar-container {
+  width: 70%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.progress-bar {
+    width: 25%;
+    height: 100%;
+    background-color: #58CC02;
+    transition: width 0.5s ease; /* Adiciona uma transição suave */
+    border-radius: 9999px;
+}
+
+/* div da ofensiva e XP */
+.points{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    border-width: 0;
-    border-style: solid;
-    border-color: hsl(214.3, 31.8%, 91.4%);
+    box-sizing: content-box;
 }
 
+/* vidas */
+.lifes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    color:rgb(202, 6, 6);
+    border-radius: 9999px;
+}
+
+/* XP */
+.coins{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    background-color: rgb(254, 249, 195);
+    color:rgb(234, 179, 8);
+    border-radius: 9999px;
+}
+
+/* botoes da header */
 .header-buttons{
     display: flex;
     justify-content: center;
@@ -101,34 +138,17 @@ body{
     opacity: 1;
 }
 
-/* --- CSS para a bolinha de notificação --- */
-
-.notification-active .header-icons {
-    position: relative;
-}
-
-.notification-active .header-icons::after {
-    content: '';
-    position: absolute;
-    top: 0.075rem;
-    right: 0.075rem;
-    width: 8px;
-    height: 8px;
-    background-color: red; 
-    border-radius: 50%;
-    border: 1.5px solid white;
-    z-index: 3;
-    transform: translate(2%, -2%);
-}
-
 /* conteudo da tela */
+
 .content{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     min-height: fit-content;
+    margin: 1%;
     gap: 1.5rem;
+    
 }
 
 .card{
@@ -138,14 +158,12 @@ body{
     align-items: center;
     position: sticky;
     padding: 1rem;
-    width: 95%;
+    width: 100%;
     border-width: 1.5px;
     border-color: hsl(214.3, 31.8%, 91.4%);
     border-style: solid;
     border-radius: 0.5rem;
     box-shadow: 2px 3px 10px rgb(220, 222, 224);
-    margin: 1% 1%;
-    gap: 0.5rem;
 }
 
 .card-header{
@@ -164,20 +182,26 @@ body{
     color: ;
 }
 
-.main-labels{
-    margin: 0.25rem;
+.main-header{
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    color: rgb(20, 20, 20);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(0, 0, 0);
+}
+
+.main-labels{
+    margin: 0.25rem 0;
+    font-weight: 700;
+    /* font-size: 1rem; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .main-contents{
-    margin: 0.25rem;
+    margin: 0.25rem 0;
     font-weight: 300;
-    font-size: 0.875rem;
+    font-size: 1rem;
+    align-self: flex-start;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(75, 75, 75);
 }
 
 
@@ -185,14 +209,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
     background-image: linear-gradient(to right, #58cc02 , #46a302);
-    font-size: large;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     color: rgb(255, 255, 255);
     border-style: none;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    width: 80%;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    width: 95%;
+    height: 3rem;
     cursor: pointer;
     transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
     color 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -204,159 +232,29 @@ body{
     background-image: linear-gradient(to right, #46a302, #58cc02);
 }
 
-
-/* Card do usuario */
-.photo-container{
-    position: relative;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user-photo{
-    width: 100%;
-    height: 100%;
-    border-radius: 9999px;
-    border-color: #58CC02;
-    border-style: solid;
-    border-width: 4px;
-    z-index: 1;
-    object-fit: cover;
-}
-
-.user-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    transform: translate(25%, 25%);
-    background-color: #58cc02;
-    font-size: large;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    border-style: none;
-    padding: 0.5rem;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.user-buttons:hover{
-    color: rgb(255, 255, 255);
-    background-color: #46a302; 
-    z-index: 2;
-}
-
-.text-container{
-    width: 80%;
-    margin: 0 auto 12px auto;
-    display: flex;
-    flex-direction: column;
+/* pergunta */
+.question{
+    display: grid;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 1rem 0.5;
+    height: 100%;
 }
 
-.user-name{
-    margin: 0.25rem;
-    font-weight: 600;
-    font-size: 1.5rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: center;
-}
-
-.user-infos{
-    margin: 0.25rem;
-    font-size: 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: center;
-}
-
-/* Card das estatisticas */
-.stats{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin-top: 1rem;
-}
-
-.wins{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    stroke:rgb(249, 115, 22);
-}
-
-.streak{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color:rgb(249, 115, 22);
-}
-
-.coins{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color:rgb(234, 179, 8);
-}
-
-/* Card das conquistas */
-.achievements-list{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-.achievements-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    width: 99%;
-    align-items: center;
-}
-
-.achievements-icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    color: rgb(156, 163, 175);
-    background-color: rgb(229, 231, 235);
-}
-
-.active{
-    color: rgb(255, 255, 255);
-    background-color: #58CC02;
-}
-
-.achievements-text-area{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
 
 /* navegacao */
 .navigation{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
     position: sticky;
     bottom: 0;
     background-color: hsl(0, 0%, 100%);
     z-index: 2;
+    width: 100%;
     padding: 0.5rem;
     border-top-width: 1px;
     border-top-color: rgb(243, 244, 246);
@@ -401,3 +299,4 @@ body{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
+
