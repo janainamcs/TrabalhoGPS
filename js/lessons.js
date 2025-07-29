@@ -1,14 +1,3 @@
-function check() {
-  if (confirm("Realmente deseja desistir?")) {
-    voltar();
-  }
-}
-function voltar() {
-  history.back();
-}
-function mostrar(id) {
-  location.href = id;
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const optionsList = document.querySelector(".options-list");

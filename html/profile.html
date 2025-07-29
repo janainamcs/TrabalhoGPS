@@ -115,28 +115,22 @@
       </section>
     </main>
     <nav class="navigation">
-      <button type="button" class="nav-buttons" onclick="mostrar('index2.html')">
+      <button type="button" class="nav-buttons" onclick="mostrar('index.html')" data-page="index.html">
         <span class="material-symbols-outlined nav-icons">home</span>
         Aprender
       </button>
       
-      <button type="button" class="nav-buttons" onclick="mostrar('ranking.html')">
+      <button type="button" class="nav-buttons" onclick="mostrar('ranking.html')" data-page="ranking.html">
         <span class="material-symbols-outlined nav-icons">leaderboard</span>
         Ranking  
       </button>
 
-      <button type="button" class="nav-buttons nav-active" onclick="mostrar('profile.html')">
+      <button type="button" class="nav-buttons" onclick="mostrar('profile.html')" data-page="profile.html">
         <span class="material-symbols-outlined nav-icons">person</span>
         Perfil
       </button>
     </nav>
-    <script>
-      function voltar(){
-        history.back();
-      }
-      function mostrar(id) {
-        location.href = id;
-      }
+    <script src="../js/script.js"></script>
   </script>
   </body>
 </html>

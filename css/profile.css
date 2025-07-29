@@ -416,7 +416,7 @@ body{
     cursor: pointer;
 }
 
-.nav-active{
+.nav-buttons.active{
     background-color: rgb(239, 246, 255);
     color: rgb(28, 176, 246);
     text: rgb(28, 176, 246);

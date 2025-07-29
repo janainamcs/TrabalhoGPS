@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <title>DevClass</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../css/index2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/ranking.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
@@ -11,57 +12,66 @@
   </head>
   <body>
     <header class="header">
-      <div class="points">
-        <div class="streak">
-          <span class="material-symbols-outlined header-icons">
-            local_fire_department
-          </span>
-          <p class="header-contents">3</p>
-        </div>
-        <div class="coins">
-          <span class="material-symbols-outlined header-icons"> paid </span>
-          <p class="header-contents">3</p>
-        </div>
+      <div class="header-text">
+        <h3>Ranking</h3>
       </div>
-      <div class="logo">
-        <p>DevClass</p>
+      <div class="filter">
+        <button
+            type="button"
+            class="card filter-button active"
+            onclick="sortRanking()"
+          >
+            <div class="lesson-header">
+              <h4 class="card-header">Meta diária</h4>
+              <span class="material-symbols-outlined lesson-icon"> lock </span>
+            </div>
+            <p class="main-contents">
+              Faltam apenas 55XP para completar sua meta diária
+            </p>
+            <div class="lesson-footer">
+              <p class="main-labels">30XP</p>
+              <p class="main-labels">A fazer</p>
+            </div>
+          </button>
       </div>
-      <div class="functional">
-        <div class="notifications">
-          <a href="notifications.html">
-            <span class="material-symbols-outlined header-icons">
-              notifications
-            </span>
-          </a>
-        </div>
-        <div class="settings">
-          <a href="">
-            <span class="material-symbols-outlined header-icons">settings</span>
-          </a>
-        </div>
-      </div>
+      <div class="divider"></div>
     </header>
+    <main class="content">
+      <!-- header filtro <h3 class="main-header">Ranking</h3>
+       -->
+      <!-- card das conquistas -->
+      <section class="card">
+        <div class="ranking">
+          <div class="ranking-item">
+              <div class="photo-container">
+                <img src="../images/user.png" alt="foto de perfil" class="user-photo">
+              </div>
+              <div class="text-area">
+                <p class="main-labels">Primeira licão</p>
+                <p class="main-contents">Conclua sua primeira tarefa no DevClass!</p>
+              </div>
+            </div>
+        </div>
+          
+        </div>
+      </section>
+    </main>
     <nav class="navigation">
-      <button type="button" class="nav-buttons" onclick="mostrar('index2.html')" active>
+      <button type="button" class="nav-buttons" onclick="mostrar('index.html')" data-page="index.html">
         <span class="material-symbols-outlined nav-icons">home</span>
         Aprender
       </button>
       
-      <button type="button" class="nav-buttons active" onclick="mostrar('ranking.html')">
+      <button type="button" class="nav-buttons" onclick="mostrar('ranking.html')" data-page="ranking.html">
         <span class="material-symbols-outlined nav-icons">leaderboard</span>
         Ranking  
       </button>
 
-      <button type="button" class="nav-buttons" onclick="mostrar('profile.html')">
+      <button type="button" class="nav-buttons" onclick="mostrar('profile.html')" data-page="profile.html">
         <span class="material-symbols-outlined nav-icons">person</span>
         Perfil
       </button>
     </nav>
-    <footer></footer>
-    <script>
-      function mostrar(id) {
-        location.href=id;
-      }
-    </script>
-</body>
+    <script src="../js/script.js"></script>
+  </body>
 </html>

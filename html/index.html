@@ -1,121 +1,196 @@
+<!-- falta: main -->
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>DevClass</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="../css/index.css">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" />
-</head>
-<body>
-  <h1>DevClass - Estrutura Base</h1>
-  <header class="header">
-    <div class="points">
-      <div class="streak">
-        <span class="material-symbols-outlined bg-icons">local_fire_department</span>
-        <p>3</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevClass</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/index2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="points">
+        <div class="streak">
+          <span class="material-symbols-outlined header-icons">
+            local_fire_department
+          </span>
+          <p class="header-contents">3</p>
+        </div>
+        <div class="coins">
+          <span class="material-symbols-outlined header-icons"> paid </span>
+          <p class="header-contents">3</p>
+        </div>
       </div>
-      <div class="coins">
-        <span class="material-symbols-outlined bg-icons">paid</span>
-        <p>100 XP</p>
+      <div class="header-labels">
+        <p>DevClass</p>
       </div>
-    </div>
-    <div class="functional">
-      <div class="notifications">
-        <span class="material-symbols-outlined no-bg-icons">notifications</span>
+      <div class="functional">
+        <div class="notifications notification-active" id="notification-active">
+          <button
+            type="button"
+            class="header-buttons"
+            onclick="mostrar('notifications.html')"
+          >
+            <span class="material-symbols-outlined header-icons">
+              notifications
+            </span>
+          </button>
+        </div>
+        <div class="settings">
+          <button
+            type="button"
+            class="header-buttons"
+            onclick="mostrar('settings.html')"
+          >
+            <span class="material-symbols-outlined header-icons">
+              settings
+            </span>
+          </button>
+        </div>
       </div>
-      <div class="settings">
-        <span class="material-symbols-outlined no-bg-icons">settings</span>
-      </div>
-      <div class="profile">
-        <span class="material-symbols-outlined no-bg-icons">person</span>
-      </div>
-    </div>
-  </header>
+    </header>
+    <div class="divider"></div>
+    <main class="content">
+      <!-- card da meta diaria -->
+      <section class="card daily-goal">
+        <div class="content-goals">
+          <div class="goals-info">
+            <h4 class="card-header">Meta diária</h4>
+            <p class="main-contents">45/100 XP</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <p class="main-contents">
+            Faltam apenas 55XP para completar sua meta diária
+          </p>
+        </div>
+      </section>
+      <button
+        type="button"
+        class="main-buttons"
+        onclick="mostrar('settings.html')"
+      >
+        Escolher nova linguagem
+      </button>
 
-  <!-- 🔐 Tela de Login -->
-  <section id="tela-login">
-    <h2>Login</h2>
-    <form>
-      <input type="email" placeholder="Email" required><br>
-      <input type="password" placeholder="Senha" required><br>
-      <button type="submit">Entrar</button>
-    </form>
-    <p><a href="#">Cadastrar-se</a> | <a href="#">Esqueceu a senha?</a></p>
-  </section>
+      <!-- comeco da trilha -->
+      <h3 class="main-header">Trilha Javascript</h3>
+      <!-- trilha de aprendizado -->
+      <section>
+        <div class="roadmap">
+          <div class="road"></div>
+          <button
+            type="button"
+            class="card lesson finished"
+            onclick="mostrar('lesson.html')"
+          >
+            <div class="lesson-header">
+              <h4 class="card-header">Meta diária</h4>
+              <span class="material-symbols-outlined lesson-icon">
+                check_circle
+              </span>
+            </div>
+            <p class="main-contents">
+              Faltam apenas 55XP para completar sua meta diária
+            </p>
+            <div class="lesson-footer">
+              <p class="main-labels">30XP</p>
+              <p class="main-labels">Concluída</p>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="card lesson"
+            onclick="mostrar('lesson.html')"
+          >
+            <div class="lesson-header">
+              <h4 class="card-header">Meta diária</h4>
+              <span class="material-symbols-outlined"> play_arrow </span>
+            </div>
+            <p class="main-contents">
+              Faltam apenas 55XP para completar sua meta diária
+            </p>
+            <div class="lesson-footer">
+              <p class="main-labels">30XP</p>
+              <p class="main-labels">A fazer</p>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="card lesson blocked"
+            onclick="alert('Conclua as licoes anteriores para desbloquar essa licao')"
+          >
+            <div class="lesson-header">
+              <h4 class="card-header">Meta diária</h4>
+              <span class="material-symbols-outlined lesson-icon"> lock </span>
+            </div>
+            <p class="main-contents">
+              Faltam apenas 55XP para completar sua meta diária
+            </p>
+            <div class="lesson-footer">
+              <p class="main-labels">30XP</p>
+              <p class="main-labels">A fazer</p>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="card lesson blocked"
+            onclick="alert('Conclua as licoes anteriores para desbloquar essa licao')"
+          >
+            <div class="lesson-header">
+              <h4 class="card-header">Meta diária</h4>
+              <span class="material-symbols-outlined lesson-icon"> lock </span>
+            </div>
+            <p class="main-contents">
+              Faltam apenas 55XP para completar sua meta diária
+            </p>
+            <div class="lesson-footer">
+              <p class="main-labels">30XP</p>
+              <p class="main-labels">A fazer</p>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="card lesson blocked"
+            onclick="alert('Conclua as licoes anteriores para desbloquar essa licao')"
+          >
+            <div class="lesson-header">
+              <h4 class="card-header">Meta diária</h4>
+              <span class="material-symbols-outlined lesson-icon"> lock </span>
+            </div>
+            <p class="main-contents">
+              Faltam apenas 55XP para completar sua meta diária
+            </p>
+            <div class="lesson-footer">
+              <p class="main-labels">30XP</p>
+              <p class="main-labels">A fazer</p>
+            </div>
+          </button>
+        </div>
+      </section>
+    </main>
+    <nav class="navigation">
+      <button type="button" class="nav-buttons" onclick="mostrar('index.html')" data-page="index.html">
+        <span class="material-symbols-outlined nav-icons">home</span>
+        Aprender
+      </button>
+      
+      <button type="button" class="nav-buttons" onclick="mostrar('ranking.html')" data-page="ranking.html">
+        <span class="material-symbols-outlined nav-icons">leaderboard</span>
+        Ranking  
+      </button>
 
-  <!-- 🧑 Tela de Cadastro -->
-  <section id="tela-cadastro" >
-    <h2>Criar conta</h2>
-    <form>
-      <input type="text" placeholder="Nome completo" required><br>
-      <input type="email" placeholder="Email" required><br>
-      <input type="password" placeholder="Senha" required><br>
-      <button type="submit">Cadastrar</button>
-    </form>
-  </section>
-
-  <!-- 🧑‍💻 Perfil do Usuário -->
-  <section id="painel-usuario" >
-    <h2>Bem-vindo, <span id="usuario-nome">Usuário</span></h2>
-    <img src="avatar_padrao.png" alt="Avatar" width="100"><br>
-    <p>Email: <span id="usuario-email">exemplo@email.com</span></p>
-    <p>XP total: <span id="usuario-xp">100</span></p>
-    <p>Streak: <span id="usuario-streak">3 dias</span></p>
-    <h3>Conquistas</h3>
-    <ul id="lista-conquistas">
-      <li>🎖️ Primeira Lição - <strong>Conquistada</strong></li>
-      <li>🏅 100 XP - <strong>Não conquistada</strong></li>
-    </ul>
-  </section>
-
-  <!-- 📘 Trilha de Aprendizado -->
-  <section id="trilha-aprendizado" >
-    <h2>Trilha de JavaScript</h2>
-    <ul id="lista-licoes">
-      <li>🔓 Lição 1 - Variáveis (25 XP)</li>
-      <li>🔒 Lição 2 - Condicionais (Bloqueada)</li>
-    </ul>
-  </section>
-
-  <!-- ❓ Visualização de Lição e Questões -->
-  <section id="tela-questoes" >
-    <h2>Lição: Variáveis</h2>
-    <div class="questao">
-      <h4>1. Qual o resultado?</h4>
-      <pre>let nome = "João"; alert(nome);</pre>
-      <ul>
-        <li><button>João</button></li>
-        <li><button>alert</button></li>
-        <li><button>undefined</button></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 🏆 Ranking -->
-  <section id="ranking-global" class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-    <h2>Ranking dos Alunos</h2>
-    <ol>
-      <li>👑 Alice - 350 XP</li>
-      <li>🐱 Byte - 250 XP</li>
-      <li>🧠 Ricardo - 200 XP</li>
-    </ol>
-  </section>
-
-  <!-- 🧭 Navegação -->
-  <nav>
-    <button onclick="mostrar('tela-login')">Login</button>
-    <button onclick="mostrar('painel-usuario')">Perfil</button>
-    <button onclick="mostrar('trilha-aprendizado')">Trilha</button>
-    <button onclick="mostrar('tela-questoes')">Lição</button>
-    <button onclick="mostrar('ranking-global')">Ranking</button>
-  </nav>
-
-  <script>
-    function mostrar(id) {
-      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
-</body>
+      <button type="button" class="nav-buttons" onclick="mostrar('profile.html')" data-page="profile.html">
+        <span class="material-symbols-outlined nav-icons">person</span>
+        Perfil
+      </button>
+    </nav>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  </body>
 </html>

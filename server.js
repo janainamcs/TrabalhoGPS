@@ -9,6 +9,7 @@ const app = express();
 const porta = 8000;
 const path = require('path');
 
+
 // Middleware para requisições CORS e JSON
 app.use(cors());
 app.use(express.json());
@@ -25,7 +26,24 @@ const conexao = mysql.createConnection({
 // --------------------------
 // ROTA: Tela inicial
 // --------------------------
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html', 'index.html'));
+});
+
 app.use(express.static(path.join(__dirname, 'html')));
+// Servir a pasta 'css' para arquivos CSS
+app.use('/css', express.static(path.join(__dirname, 'css'))); // O '/css' é o prefixo da URL
+
+// Opcional: Servir a pasta 'images' para imagens
+app.use('/images', express.static(path.join(__dirname, 'images'))); // O '/images' é o prefixo da URL
+
+// Opcional: Servir a pasta 'images' para imagens
+app.use('/icons', express.static(path.join(__dirname, 'icons'))); // O '/images' é o prefixo da URL
+
+// Opcional: Servir a pasta 'images' para imagens
+app.use('/js', express.static(path.join(__dirname, 'js'))); // O '/images' é o prefixo da URL
+
 
 
 // --------------------------
