@@ -211,9 +211,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, #CE82FF, #1CB0F6);
+    background-image: linear-gradient(to right, #58cc02 , #46a302);
     font-size: large;
-    font-weight: 700;
+    font-weight: 500;
     color: rgb(255, 255, 255);
     border-style: none;
     padding: 0.75rem;
@@ -227,37 +227,101 @@
 /* CSS pro hover */
 .main-buttons:hover{
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(to right, #1CB0F6, #CE82FF);
+    background-image: linear-gradient(to right, #46a302, #58cc02);
 }
 
-/* meta diária */
+/* Estilos para o botão desativado */
+.main-buttons:disabled {
+    background-image: linear-gradient(to right, #ccc, #bbb); /* Cor mais clara para desativado */
+    cursor: not-allowed; /* Cursor de "não permitido" */
+    opacity: 0.7; /* Suaviza a cor */
+}
 
-.content-goals{
+/* Remova o hover quando o botão estiver desativado */
+.main-buttons:disabled:hover {
+    background-image: linear-gradient(to right, #ccc, #bbb); /* Mantém a cor de desativado no hover */
+}
+
+/* card das questoes */
+.question{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin:  1% 2%;
     width: 96%;
-    height: 128px;
+    border: none;
+    box-shadow: none;
 }
 
-
-/* trilha de aprendizado */
-.roadmap{
+.options-list{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-around;
+    margin:  1% 2%;
+    width: 100%;
+    gap:1rem;
 }
 
-.road{
-    background: linear-gradient(to bottom, #58CC02 ,#1CB0F6, rgb(107, 110, 114));
-    width: 5px;
-    height: 100%;
+.option-item{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.75rem 1rem;
+    width: auto;
+    box-shadow: none;
+    margin: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.option-item.selected {
+    background-color: #e6ffe6; /* Um verde claro */
+    border-color: #58CC02; /* Borda verde */
+}
+
+.option-item:hover {
+    background-color: #f0f0f0; /* Um cinza claro no hover */
+}
+
+/* radio button estilizado */
+/* Esconda o radio button padrão e estilize-o customizado (opcional, mas comum para melhor UX) */
+.option-item input[type="radio"] {
+    -webkit-appearance: none; /* Esconde o radio button padrão (Chrome/Safari) */
+    -moz-appearance: none;    /* Esconde o radio button padrão (Firefox) */
+    appearance: none;         /* Esconde o radio button padrão (padrão CSS) */
+    width: 20px;              /* Tamanho do seu rádio customizado */
+    height: 20px;
+    border: 2px solid #ccc;  /* Borda do rádio */
+    border-radius: 50%;       /* Forma circular */
+    margin-right: 10px;       /* Espaçamento entre o rádio e o label */
+    outline: none;            /* Remove o contorno ao focar */
+    cursor: pointer;          /* Cursor de ponteiro */
+    flex-shrink: 0;           /* Evita que o rádio encolha */
+    position: relative;
+}
+
+/* Estilo do preenchimento interno do radio button customizado quando marcado */
+.option-item input[type="radio"]:checked {
+    border-color: #58CC02; /* Borda verde quando marcado */
+}
+
+.option-item input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #58CC02; /* Cor de preenchimento do rádio */
+    border-radius: 50%;
     position: absolute;
-    inset-inline-start: 50%;
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Garanta que o label preencha o espaço restante e seja clicável */
+.option-item label {
+    flex-grow: 1; /* Permite que o label ocupe o espaço restante */
+    cursor: pointer; /* Garante que o cursor mude sobre o label também */
 }
 
 .lesson{
@@ -270,31 +334,7 @@
     padding: 1.5rem;
 }
 
-.lesson-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 1.5rem;
-    width: 100%;
-}
 
-.lesson-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 1.5rem;;
-    width: 100%;
-    font-size: 0.75;
-}
-
-.finished{
-    background-color: #58CC02;
-    border-radius: 0.5rem;
-    border-style: none;
-    color: rgb(255, 255, 255);
-}
 
 .blocked{
     background-color: rgb(229, 231, 235);

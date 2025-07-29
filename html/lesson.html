@@ -38,18 +38,26 @@
     </header>
 
     <main class="content">
-      <!-- trilha de aprendizado -->
-      <div class="question">
-        <h4 class="card-header">Qual a forma correta de declarar uma variável em Python?</h4>
-
+      <!-- pagina da pergunta -->
+      <div class="card question">
+        <h4 class="card-header">
+          Qual a forma correta de declarar uma variável em Python?
+        </h4>
         <div class="options-list">
-          <div class="option-item">
-
-          </div>  
+          <div class="card option-item">
+            <input type="radio" id="option1" name="answer" value="option1" />
+            <label for="option1" class="main-contents">option1</label>
+          </div>
+          <div class="card option-item">
+            <input type="radio" id="option2" name="answer" value="option2" />
+            <label for="option2" class="main-contents">option2</label>
+          </div>
+          <div class="card option-item">
+            <input type="radio" id="option3" name="answer" value="option3" />
+            <label for="option3" class="main-contents">option3</label>
+          </div>
         </div>
-        <button type="submit" class="main-buttons">
-          Verificar
-        </button>
+        <button type="submit" class="main-buttons" disabled>Verificar</button>
       </div>
     </main>
     <!-- <nav class="navigation">
@@ -81,18 +89,9 @@
         Perfil
       </button>
     </nav> -->
-    <script>
-      function check() {
-        if (confirm("Realmente deseja desistir?")) {
-          voltar();
-        }
-      }
-      function voltar() {
-        history.back();
-      }
-      function mostrar(id) {
-        location.href = id;
-      }
+    <script src="../script.js">
+      
     </script>
+
   </body>
 </html>
