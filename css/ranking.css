@@ -235,9 +235,9 @@
 .ranking-item{
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    width: 99%;
+    justify-content: space-between;
     align-items: center;
+    width: 99%;
 }
 
 .text-area{
